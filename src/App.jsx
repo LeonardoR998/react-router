@@ -1,12 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Homepage from "./pages/HomePage";
+
+import DefaultLayout from "./layouts/DefaultLayout";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import PostsList from "./pages/PostsList";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index Component={Homepage} />
+        <Route Component={DefaultLayout}>
+          <Route index Component={HomePage} />
+          <Route path="/about" Component={AboutPage} />
+          <Route path="/posts" Component={PostsList} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

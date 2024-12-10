@@ -1,3 +1,7 @@
-export default function Homepage() {
-  return <h1>Homepage</h1>;
+export default function HomePage() {
+  return (
+    <div className="container py-5">
+      <h1>Homepage</h1>
+    </div>
+  );
 }
